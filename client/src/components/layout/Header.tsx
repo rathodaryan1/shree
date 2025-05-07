@@ -100,6 +100,13 @@ export default function Header() {
             Gallery
           </Link>
           <Link
+            href="/faq"
+            className="font-roboto font-medium hover:text-primary transition"
+            onClick={() => handleNavigation("/faq")}
+          >
+            FAQ
+          </Link>
+          <Link
             href="/contact"
             className="font-roboto font-medium hover:text-primary transition"
             onClick={() => handleNavigation("/contact")}
@@ -163,6 +170,13 @@ export default function Header() {
             onClick={() => handleNavigation("/gallery")}
           >
             Gallery
+          </Link>
+          <Link
+            href="/faq"
+            className="block py-2 font-roboto font-medium hover:text-primary transition"
+            onClick={() => handleNavigation("/faq")}
+          >
+            FAQ
           </Link>
           <Link
             href="/contact"
