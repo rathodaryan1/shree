@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { companyInfo } from "@/lib/data";
+import shreeLogo from "../../assets/shree-logo.jpg";
 
 interface LogoProps {
   className?: string;
@@ -7,22 +7,16 @@ interface LogoProps {
 }
 
 export function Logo({ className, variant = "default" }: LogoProps) {
-  const textColor = variant === "white" ? "text-white" : "text-primary";
-  const subTextColor = variant === "white" ? "text-white/80" : "text-gray-600";
+  // Add a filter for white version if needed
+  const imgFilter = variant === "white" ? "brightness-0 invert" : "";
   
   return (
     <div className={cn("flex items-center", className)}>
-      <div className="mr-2 w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
-        <span className="text-primary font-bold text-xl">SE</span>
-      </div>
-      <div>
-        <h1 className={cn("font-roboto font-bold text-xl md:text-2xl", textColor)}>
-          {companyInfo.name}
-        </h1>
-        <p className={cn("text-xs md:text-sm", subTextColor)}>
-          {companyInfo.tagline}
-        </p>
-      </div>
+      <img 
+        src={shreeLogo} 
+        alt="Shree Enterprise Logo" 
+        className={cn("h-16 w-auto", imgFilter)} 
+      />
     </div>
   );
 }
