@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function Hero() {
   return (
     <section id="home" className="relative bg-dark overflow-hidden">
-      <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 z-10"></div>
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
@@ -13,9 +13,9 @@ export default function Hero() {
         />
       </div>
       
-      <div className="container mx-auto px-4 py-16 md:py-24 relative z-20">
-        <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-5xl font-roboto font-bold text-white mb-4">
+      <div className="container mx-auto px-4 py-20 md:py-28 lg:py-32 relative z-20">
+        <div className="max-w-3xl bg-black/30 p-6 md:p-8 rounded-lg backdrop-blur-sm border border-white/10">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-roboto font-bold text-white mb-4 animate-fadeIn">
             Complete Fire Safety Solutions for Your Business
           </h1>
           <p className="text-lg md:text-xl text-gray-100 mb-8">

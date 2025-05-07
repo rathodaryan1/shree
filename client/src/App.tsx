@@ -13,6 +13,7 @@ import NotFound from "@/pages/not-found";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import FloatingCTA from "@/components/FloatingCTA";
+import ScrollToTop from "@/components/ScrollToTop";
 
 function App() {
   // Replace with your actual Google Analytics Measurement ID when available
@@ -26,6 +27,9 @@ function App() {
         
         {/* Floating CTA buttons */}
         <FloatingCTA />
+        
+        {/* Scroll to top button */}
+        <ScrollToTop />
         
         <Header />
         <main className="flex-grow">
