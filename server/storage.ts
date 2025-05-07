@@ -1,9 +1,9 @@
 import { users, type User, type InsertUser } from "@shared/schema";
 import { contactSubmissions, type Contact, type InsertContact } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
-// modify the interface with any CRUD methods
-// you might need
-
+// Interface hasn't changed, only the implementation
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
@@ -12,52 +12,45 @@ export interface IStorage {
   getContactSubmissions(): Promise<Contact[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private contacts: Map<number, Contact>;
-  private userCurrentId: number;
-  private contactCurrentId: number;
-
-  constructor() {
-    this.users = new Map();
-    this.contacts = new Map();
-    this.userCurrentId = 1;
-    this.contactCurrentId = 1;
-  }
-
+// Database implementation of storage
+export class DatabaseStorage implements IStorage {
   async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.userCurrentId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
     return user;
   }
 
   async createContactSubmission(insertContact: InsertContact): Promise<Contact> {
-    const id = this.contactCurrentId++;
-    const contact: Contact = { 
-      ...insertContact, 
-      id, 
-      // Ensure service is always a string (not null)
+    // Ensure service is always a string
+    const contact = {
+      ...insertContact,
       service: insertContact.service ?? "General Inquiry",
-      createdAt: new Date().toISOString() 
+      createdAt: new Date().toISOString()
     };
-    this.contacts.set(id, contact);
-    return contact;
+
+    const [result] = await db
+      .insert(contactSubmissions)
+      .values(contact)
+      .returning();
+    
+    return result;
   }
 
   async getContactSubmissions(): Promise<Contact[]> {
-    return Array.from(this.contacts.values());
+    return await db.select().from(contactSubmissions);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
