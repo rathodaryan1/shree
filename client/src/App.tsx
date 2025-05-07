@@ -4,6 +4,7 @@ import ServiceDetails from "@/pages/ServiceDetails";
 import About from "@/pages/About";
 import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
+import Quote from "@/pages/Quote";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import NotFound from "@/pages/not-found";
@@ -21,6 +22,7 @@ function App() {
             <Route path="/about" component={About} />
             <Route path="/gallery" component={Gallery} />
             <Route path="/contact" component={Contact} />
+            <Route path="/quote" component={Quote} />
             <Route component={NotFound} />
           </Switch>
         </main>

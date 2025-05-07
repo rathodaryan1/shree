@@ -108,7 +108,7 @@ export default function Header() {
           </Link>
         </nav>
 
-        <Link href="/contact" className="hidden md:block">
+        <Link href="/quote" className="hidden md:block">
           <Button className="bg-primary hover:bg-red-700 text-white font-roboto font-medium">
             Get a Quote
           </Button>
@@ -172,9 +172,9 @@ export default function Header() {
             Contact
           </Link>
           <Link
-            href="/contact"
+            href="/quote"
             className="block mt-3"
-            onClick={() => handleNavigation("/contact")}
+            onClick={() => handleNavigation("/quote")}
           >
             <Button className="w-full bg-primary hover:bg-red-700 text-white font-roboto font-medium">
               Get a Quote
