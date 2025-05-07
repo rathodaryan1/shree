@@ -40,6 +40,16 @@ export default function FloatingCTA() {
                 href={`tel:+91${companyInfo.phone1}`}
                 className="flex items-center justify-center w-12 h-12 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-all"
                 title="Call Us"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  // Track click event if analytics are available
+                  if (window.gtag) {
+                    window.gtag('event', 'click', {
+                      event_category: 'Contact',
+                      event_label: 'Phone Call CTA',
+                    });
+                  }
+                }}
               >
                 <PhoneCall size={20} />
               </a>
@@ -51,6 +61,16 @@ export default function FloatingCTA() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-12 h-12 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-all"
                 title="Chat on WhatsApp"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  // Track click event if analytics are available
+                  if (window.gtag) {
+                    window.gtag('event', 'click', {
+                      event_category: 'Contact',
+                      event_label: 'WhatsApp CTA',
+                    });
+                  }
+                }}
               >
                 <MessageCircle size={20} />
               </a>
@@ -59,10 +79,19 @@ export default function FloatingCTA() {
           
           {/* Main toggle button */}
           <button
-            onClick={() => setExpanded(!expanded)}
-            className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all ${
+            onClick={() => {
+              setExpanded(!expanded);
+              // Track toggle event if analytics are available
+              if (window.gtag) {
+                window.gtag('event', 'click', {
+                  event_category: 'UI',
+                  event_label: expanded ? 'Close CTA Menu' : 'Open CTA Menu',
+                });
+              }
+            }}
+            className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all animate-slideInRight ${
               expanded ? 'bg-gray-700' : 'bg-primary'
-            } text-white`}
+            } text-white hover:scale-105`}
             aria-label={expanded ? "Close contact options" : "Open contact options"}
           >
             {expanded ? <X size={24} /> : <MessageCircle size={24} />}

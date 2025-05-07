@@ -12,6 +12,7 @@ import Footer from "@/components/layout/Footer";
 import NotFound from "@/pages/not-found";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import FloatingCTA from "@/components/FloatingCTA";
 
 function App() {
   // Replace with your actual Google Analytics Measurement ID when available
@@ -22,6 +23,9 @@ function App() {
       <div className="flex flex-col min-h-screen">
         {/* Google Analytics integration */}
         <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
+        
+        {/* Floating CTA buttons */}
+        <FloatingCTA />
         
         <Header />
         <main className="flex-grow">
