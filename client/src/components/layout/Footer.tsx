@@ -15,17 +15,33 @@ export default function Footer() {
               Leading provider of comprehensive fire safety solutions for commercial, industrial, and residential properties.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition" aria-label="Facebook">
-                <Facebook />
+              <a 
+                href="#" 
+                className="bg-[#1877F2] text-white p-2 rounded-full hover:opacity-90 transition transform hover:scale-110"
+                aria-label="Facebook"
+              >
+                <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition" aria-label="Twitter">
-                <Twitter />
+              <a 
+                href="#" 
+                className="bg-[#1DA1F2] text-white p-2 rounded-full hover:opacity-90 transition transform hover:scale-110"
+                aria-label="Twitter"
+              >
+                <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition" aria-label="LinkedIn">
-                <Linkedin />
+              <a 
+                href="#" 
+                className="bg-[#0A66C2] text-white p-2 rounded-full hover:opacity-90 transition transform hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition" aria-label="Instagram">
-                <Instagram />
+              <a 
+                href="#" 
+                className="bg-gradient-to-r from-[#F56040] via-[#E1306C] to-[#833AB4] text-white p-2 rounded-full hover:opacity-90 transition transform hover:scale-110"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} />
               </a>
             </div>
           </div>

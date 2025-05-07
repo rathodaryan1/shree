@@ -116,7 +116,7 @@ export default function Header() {
         </nav>
 
         <Link href="/quote" className="hidden md:block">
-          <Button className="bg-primary hover:bg-red-700 text-white font-roboto font-medium">
+          <Button className="bg-primary hover:bg-red-700 text-white font-roboto font-medium px-6 shadow-md hover:shadow-lg transform hover:scale-105 transition-all">
             Get a Quote
           </Button>
         </Link>
@@ -190,7 +190,7 @@ export default function Header() {
             className="block mt-3"
             onClick={() => handleNavigation("/quote")}
           >
-            <Button className="w-full bg-primary hover:bg-red-700 text-white font-roboto font-medium">
+            <Button className="w-full bg-primary hover:bg-red-700 text-white font-roboto font-medium py-5 shadow-md hover:shadow-lg">
               Get a Quote
             </Button>
           </Link>

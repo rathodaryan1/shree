@@ -23,7 +23,10 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="#services">
-              <Button size="lg" className="bg-primary hover:bg-red-700 text-white font-roboto font-medium w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-red-700 text-white font-roboto font-medium w-full sm:w-auto px-6 py-6 text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
+              >
                 Explore Our Services
               </Button>
             </Link>
@@ -31,7 +34,7 @@ export default function Hero() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="bg-transparent hover:bg-white/10 text-white border-2 border-white font-roboto font-medium w-full sm:w-auto"
+                className="bg-transparent hover:bg-white/20 text-white border-2 border-white font-roboto font-medium w-full sm:w-auto px-6 py-6 text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
               >
                 Contact Us
               </Button>
