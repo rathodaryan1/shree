@@ -6,15 +6,23 @@ import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
 import Quote from "@/pages/Quote";
 import Faq from "@/pages/Faq";
+import Testimonials from "@/pages/Testimonials";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import NotFound from "@/pages/not-found";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 function App() {
+  // Replace with your actual Google Analytics Measurement ID when available
+  const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || '';
+
   return (
     <TooltipProvider>
       <div className="flex flex-col min-h-screen">
+        {/* Google Analytics integration */}
+        <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
+        
         <Header />
         <main className="flex-grow">
           <Switch>
@@ -25,6 +33,7 @@ function App() {
             <Route path="/contact" component={Contact} />
             <Route path="/quote" component={Quote} />
             <Route path="/faq" component={Faq} />
+            <Route path="/testimonials" component={Testimonials} />
             <Route component={NotFound} />
           </Switch>
         </main>
