@@ -10,7 +10,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
               <img 
-                src="/shreelogo-finalv23.jpg" 
+                src="/shreelogo.jpg" 
                 alt="Fire safety installation" 
                 className="rounded-lg shadow-md w-full h-auto"
               />
