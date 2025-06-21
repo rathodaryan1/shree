@@ -9,11 +9,11 @@ export default function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <img 
-              src="https://pixabay.com/get/g139acf229493ba77c83b1afd628124b40d1f990a6aca2c2233851d5ff12b0d46a8b698fd1e1c1f4cbfdf25dd5d77b07772ef5aa00cf823bdc5910afb5ef4b00f_1280.jpg" 
-              alt="Fire safety installation" 
-              className="rounded-lg shadow-md w-full h-auto"
-            />
+              <img 
+                src="/shreelogo-finalv23.jpg" 
+                alt="Fire safety installation" 
+                className="rounded-lg shadow-md w-full h-auto"
+              />
           </div>
           <div>
             <h2 className="text-2xl md:text-3xl font-roboto font-bold mb-6">About Shree Enterprise</h2>
