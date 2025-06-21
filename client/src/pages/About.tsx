@@ -23,7 +23,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div>
             <img 
-              src="/shreelogo-final.jpg" 
+              src="cd /shreelogo-finalv23.jpg" 
               alt="Fire safety installation" 
               className="rounded-lg shadow-md w-full h-auto"
             />
