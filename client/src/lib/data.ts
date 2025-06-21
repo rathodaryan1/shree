@@ -35,7 +35,7 @@ export const services: Service[] = [
     title: "Fire Hydrant System",
     shortDescription: "Complete installation, maintenance, and repair of fire hydrant systems for commercial and industrial properties.",
     description: "Our fire hydrant systems are designed to provide a reliable water supply for firefighting operations. We offer end-to-end solutions including system design, installation, testing, and maintenance of fire hydrant systems that comply with all safety regulations. Our systems include hydrant valves, hose reels, landing valves, and complete piping networks.",
-    imageUrl: "/shreelogo-finalv23.jpg",
+    imageUrl: "/Fire-extinguisher.jpg",
     icon: "fire-extinguisher"
   },
   {

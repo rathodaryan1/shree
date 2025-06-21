@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <img
-              src="/shreelogo-final.jpg"
+              src="/shreelogo-finalv23.jpg"
                  alt="SmartCard Fire Safety Logo"
                 className="mb-4 max-w-[200px]"
                                                   />
