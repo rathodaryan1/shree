@@ -10,17 +10,18 @@ import Testimonials from "@/pages/Testimonials";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import NotFound from "@/pages/not-found";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import FloatingCTA from "@/components/FloatingCTA";
 import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToHashElement from "@/components/ScrollToHashElement";
 
 function App() {
   // Replace with your actual Google Analytics Measurement ID when available
   const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || '';
 
-  return (
-    <TooltipProvider>
+  return (<>
+     <ScrollToHashElement />
+  
       <div className="flex flex-col min-h-screen">
         {/* Google Analytics integration */}
         <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
@@ -47,7 +48,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </TooltipProvider>
+      </>
   );
 }
 
