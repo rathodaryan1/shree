@@ -12,8 +12,9 @@ import Footer from "@/components/layout/Footer";
 import NotFound from "@/pages/not-found";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import FloatingCTA from "@/components/FloatingCTA";
-import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTopbutton from "@/components/ScrollToTopbutton";
 import ScrollToHashElement from "@/components/ScrollToHashElement";
+import ScrollToTop from "@/components/ScrollToTop";
 
 function App() {
   // Replace with your actual Google Analytics Measurement ID when available
@@ -30,7 +31,11 @@ function App() {
         <FloatingCTA />
         
         {/* Scroll to top button */}
-        <ScrollToTop />
+        <ScrollToTopbutton />
+
+        {/* Scroll to top  */}
+        <ScrollToTop />   
+
         
         <Header />
         <main className="flex-grow">
