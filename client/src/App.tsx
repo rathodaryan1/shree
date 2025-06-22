@@ -16,6 +16,7 @@ import ScrollToTopbutton from "@/components/ScrollToTopbutton";
 import ScrollToHashElement from "@/components/ScrollToHashElement";
 import ScrollToTop from "@/components/ScrollToTop";
 
+
 function App() {
   // Replace with your actual Google Analytics Measurement ID when available
   const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || '';
@@ -30,12 +31,7 @@ function App() {
         {/* Floating CTA buttons */}
         <FloatingCTA />
         
-        {/* Scroll to top button */}
-        <ScrollToTopbutton />
-
-        {/* Scroll to top  */}
-        <ScrollToTop />   
-
+        <ScrollToTop />
         
         <Header />
         <main className="flex-grow">
