@@ -14,7 +14,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import FloatingCTA from "@/components/FloatingCTA";
 import ScrollToTopbutton from "@/components/ScrollToTopbutton";
 import ScrollToHashElement from "@/components/ScrollToHashElement";
-import ScrollToTop from "@/components/ScrollToTop";
+
 
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
         {/* Floating CTA buttons */}
         <FloatingCTA />
         
-        <ScrollToTop />
+      
         
         <Header />
         <main className="flex-grow">
