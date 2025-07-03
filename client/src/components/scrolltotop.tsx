@@ -1,12 +1,15 @@
-import { useEffect } from "react";
-import { useLocation } from "wouter";
+// client/src/components/ScrollToTop.tsx
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-export default function ScrollToTop() {
-  const [location] = useLocation();
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location]);
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return null;
-}
+};
+
+export default ScrollToTop;
