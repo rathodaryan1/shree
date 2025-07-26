@@ -186,9 +186,9 @@ export default function Faq() {
                   Contact Us
                 </Button>
               </Link>
-              <a href={`tel:+917337196916`}>
+              <a href={`tel:+917383740616`}>
                 <Button variant="outline">
-                  Call: 7337196916
+                  Call: 7383740616
                 </Button>
               </a>
             </div>

@@ -146,7 +146,7 @@ export default function ServiceDetails() {
                   <FileText className="mr-2 h-4 w-4" /> Get a Quote
                 </Button>
               </Link>
-              <a href={`tel:+917337196916`} className="block">
+              <a href={`tel:+917383740616`} className="block">
                 <Button variant="outline" className="w-full flex items-center justify-center">
                   <Phone className="mr-2 h-4 w-4" /> Call Now
                 </Button>
@@ -235,9 +235,9 @@ export default function ServiceDetails() {
                 Request a Free Quote
               </Button>
             </Link>
-            <a href={`tel:+917337196916`}>
+            <a href={`tel:+917383740616`}>
               <Button variant="outline" className="px-8 py-2.5">
-                Call Us: 7337196916
+                Call Us: 7383740616
               </Button>
             </a>
           </div>

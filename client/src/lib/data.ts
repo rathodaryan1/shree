@@ -169,7 +169,7 @@
     tagline: "Fire Safety Solutions",
     address: " Behind Esi Hospital, Anand Nagar, Krishna Nagar, Bhavnagar, Gujarat 364005",
     phone1: "7383740616",
-    email: "response.shreeesnterprise@gmail.com",
+    email: "response.shreeenterprise@gmail.com",
     businessHours: {
       weekdays: "9:00 AM - 6:00 PM",
       saturday: "9:00 AM - 4:00 PM",

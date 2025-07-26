@@ -286,7 +286,6 @@ export default function ContactSection() {
                       href={`tel:+91${companyInfo.phone2}`}
                       className="hover:text-primary"
                     >
-                      +91 {companyInfo.phone2}
                     </a>
                   </p>
                 </div>
