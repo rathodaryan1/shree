@@ -165,15 +165,13 @@
   ];
 
   export const companyInfo = {
-    name: "Shree Enterprise",
-    tagline: "Fire Safety Solutions",
-    address: " Behind Esi Hospital, Anand Nagar, Krishna Nagar, Bhavnagar, Gujarat 364005",
-    phone1: "7383740616",
-    email: "response.shreeenterprise@gmail.com",
-    businessHours: {
-      weekdays: "9:00 AM - 6:00 PM",
-      saturday: "9:00 AM - 4:00 PM",
-      sunday: "Closed"
+  name: "Shree Enterprise",
+  tagline: "Fire Safety Solutions",
+  address: "Behind Esi Hospital, Anand Nagar, Krishna Nagar, Bhavnagar, Gujarat 364005",
+  phone1: "7383740616",
+  email: "response.shreeenterprise@gmail.com",
+  businessHours: {
+    allDays: "Open 24/7"
     },
     about: "Shree Enterprise is a leading provider of comprehensive fire safety solutions in Anantapur, Bhavnagar, and surrounding areas. With years of experience in the industry, we have established ourselves as trusted experts in fire protection systems. Our team of certified professionals is dedicated to ensuring the safety of your property and people through high-quality installation, regular maintenance, and prompt service. We adhere to all local and national fire safety regulations to provide you with compliant and effective protection systems."
   };

@@ -306,28 +306,21 @@ export default function ContactSection() {
               </div>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6">
-              <div className="flex items-start mb-4">
-                <Clock className="text-primary shrink-0 text-xl mt-1 mr-4" />
-                <h3 className="font-roboto font-bold text-lg">Business Hours</h3>
-              </div>
-              <div className="grid grid-cols-2 gap-2 ml-9">
-                <div className="text-gray-700">Monday - Friday:</div>
-                <div className="text-gray-600">
-                  {companyInfo.businessHours.weekdays}
-                </div>
-                <div className="text-gray-700">Saturday:</div>
-                <div className="text-gray-600">
-                  {companyInfo.businessHours.saturday}
-                </div>
-                <div className="text-gray-700">Sunday:</div>
-                <div className="text-gray-600">
-                  {companyInfo.businessHours.sunday}
-                </div>
-              </div>
-              <div className="mt-4 pt-4 border-t border-gray-200 ml-9">
-                <p className="text-primary font-medium">
-                  24/7 Emergency Service Available
-                </p>
+  <div className="flex items-start mb-4">
+    <Clock className="text-primary shrink-0 text-xl mt-1 mr-4" />
+    <h3 className="font-roboto font-bold text-lg">Business Hours</h3>
+  </div>
+
+  {/* ✅ New 24x7 format */}
+  <div className="ml-9 mt-2">
+    <p className="text-gray-700 font-medium">Open 24 Hours - 7 Days a Week</p>
+  </div>
+
+  <div className="mt-4 pt-4 border-t border-gray-200 ml-9">
+    <p className="text-primary font-medium">
+      24/7 Emergency Service Available
+    </p>
+
               </div>
             </div>
           </div>
