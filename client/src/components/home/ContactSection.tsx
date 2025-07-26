@@ -32,9 +32,8 @@ const formSchema = z.object({
     .string()
     .min(10, { message: "Phone number must be at least 10 digits" }),
   service: z.string().optional(),
-  message: z
-    .string()
-    .min(10, { message: "Message must be at least 10 characters" }),
+  message: z.string().optional(),
+
 });
 
 type FormValues = z.infer<typeof formSchema>;
