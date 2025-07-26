@@ -30,18 +30,10 @@ export default function Header() {
     }
   };
 
-  const handleServiceClick = (id: string) => {
-    setMobileMenuOpen(false);
-    if (isHome) {
-      scrollToSection(id);
-    } else {
-      setLocation(`/#${id}`);
-    }
-  };
-
   return (
     <header className="sticky top-0 z-50 shadow-md bg-white">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+        {/* Logo */}
         <Link href="/" onClick={() => setMobileMenuOpen(false)}>
           <Logo className="h-14 w-auto" />
         </Link>
@@ -75,8 +67,8 @@ export default function Header() {
               {services.map((service) => (
                 <DropdownMenuItem key={service.id} asChild>
                   <Link
-                    href={`/#${service.id}`}
-                    onClick={() => handleServiceClick(service.id)}
+                    href={`/services/${service.id}`}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="w-full"
                   >
                     {service.title}
@@ -115,6 +107,7 @@ export default function Header() {
           </Link>
         </nav>
 
+        {/* Quote Button */}
         <Link href="/quote" className="hidden md:block">
           <Button className="bg-primary hover:bg-red-700 text-white font-roboto font-medium px-6 shadow-md hover:shadow-lg transform hover:scale-105 transition-all">
             Get a Quote
@@ -148,9 +141,9 @@ export default function Header() {
               {services.map((service) => (
                 <Link
                   key={service.id}
-                  href={`/#${service.id}`}
+                  href={`/services/${service.id}`}
                   className="block py-2 hover:text-primary transition"
-                  onClick={() => handleServiceClick(service.id)}
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {service.title}
                 </Link>

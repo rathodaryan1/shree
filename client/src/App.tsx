@@ -32,7 +32,7 @@ function App() {
         {/* Floating CTA buttons */}
         <FloatingCTA />
 
-
+          <ScrollToTopbutton></ScrollToTopbutton>
           <ScrollToTop />
 
      

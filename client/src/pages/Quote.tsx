@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { services } from "@/lib/data";
 import {
@@ -39,7 +37,6 @@ export default function Quote() {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Set the page title
   useEffect(() => {
     document.title = "Get a Quote - Shree Enterprise";
   }, []);
@@ -55,31 +52,36 @@ export default function Quote() {
     },
   });
 
-  const { mutate, isPending } = useMutation({
-    mutationFn: async (values: QuoteFormValues) => {
-      const response = await apiRequest("POST", "/api/contact", values);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Quote Request Sent",
-        description: "We'll get back to you with a quote as soon as possible!",
-        variant: "default",
-      });
-      form.reset();
-      setIsSubmitted(true);
-    },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to send quote request. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
+  // ✅ Submit via Netlify Forms (No backend)
   function onSubmit(values: QuoteFormValues) {
-    mutate(values);
+    const formData = new FormData();
+    Object.entries(values).forEach(([key, value]) => {
+      formData.append(key, value as string);
+    });
+
+    // Add Netlify hidden field
+    formData.append("form-name", "quote");
+
+    fetch("/", {
+      method: "POST",
+      body: formData,
+    })
+      .then(() => {
+        toast({
+          title: "Quote Request Sent",
+          description: "We'll get back to you within 24-48 hours!",
+          variant: "default",
+        });
+        form.reset();
+        setIsSubmitted(true);
+      })
+      .catch((error) => {
+        toast({
+          title: "Error",
+          description: error.message || "Failed to send quote request.",
+          variant: "destructive",
+        });
+      });
   }
 
   return (
@@ -102,8 +104,8 @@ export default function Quote() {
                 <p className="text-green-600 mb-4">
                   We've received your request and will prepare a detailed quote for you within 24-48 hours.
                 </p>
-                <Button 
-                  className="mt-4 bg-primary hover:bg-red-700" 
+                <Button
+                  className="mt-4 bg-primary hover:bg-red-700"
                   onClick={() => setIsSubmitted(false)}
                 >
                   Request Another Quote
@@ -113,7 +115,15 @@ export default function Quote() {
               <>
                 <h2 className="text-2xl font-roboto font-bold mb-6">Your Quote Details</h2>
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <form
+                    name="quote"
+                    method="POST"
+                    data-netlify="true"
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-6"
+                  >
+                    <input type="hidden" name="form-name" value="quote" />
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <FormField
                         control={form.control}
@@ -122,10 +132,10 @@ export default function Quote() {
                           <FormItem>
                             <FormLabel className="text-gray-700 font-medium">Name</FormLabel>
                             <FormControl>
-                              <Input 
-                                placeholder="Your name" 
-                                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition" 
-                                {...field} 
+                              <Input
+                                placeholder="Your name"
+                                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition"
+                                {...field}
                               />
                             </FormControl>
                             <FormMessage />
@@ -139,11 +149,11 @@ export default function Quote() {
                           <FormItem>
                             <FormLabel className="text-gray-700 font-medium">Email</FormLabel>
                             <FormControl>
-                              <Input 
-                                placeholder="Your email" 
+                              <Input
+                                placeholder="Your email"
                                 type="email"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition" 
-                                {...field} 
+                                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition"
+                                {...field}
                               />
                             </FormControl>
                             <FormMessage />
@@ -151,7 +161,7 @@ export default function Quote() {
                         )}
                       />
                     </div>
-                    
+
                     <FormField
                       control={form.control}
                       name="phone"
@@ -159,18 +169,18 @@ export default function Quote() {
                         <FormItem>
                           <FormLabel className="text-gray-700 font-medium">Phone</FormLabel>
                           <FormControl>
-                            <Input 
-                              placeholder="Your phone number" 
+                            <Input
+                              placeholder="Your phone number"
                               type="tel"
-                              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition" 
-                              {...field} 
+                              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition"
+                              {...field}
                             />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                    
+
                     <FormField
                       control={form.control}
                       name="service"
@@ -184,7 +194,7 @@ export default function Quote() {
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              {services.map(service => (
+                              {services.map((service) => (
                                 <SelectItem key={service.id} value={service.id}>
                                   {service.title}
                                 </SelectItem>
@@ -196,7 +206,7 @@ export default function Quote() {
                         </FormItem>
                       )}
                     />
-                    
+
                     <FormField
                       control={form.control}
                       name="message"
@@ -204,24 +214,23 @@ export default function Quote() {
                         <FormItem>
                           <FormLabel className="text-gray-700 font-medium">Project Details</FormLabel>
                           <FormControl>
-                            <Textarea 
-                              placeholder="Please describe your requirements in detail (building type, square footage, specific needs, etc.)" 
+                            <Textarea
+                              placeholder="Please describe your requirements in detail (building type, square footage, specific needs, etc.)"
                               rows={5}
-                              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition" 
-                              {...field} 
+                              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition"
+                              {...field}
                             />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                    
-                    <Button 
-                      type="submit" 
+
+                    <Button
+                      type="submit"
                       className="bg-primary hover:bg-red-700 text-white font-roboto font-medium px-6 py-3 w-full sm:w-auto"
-                      disabled={isPending}
                     >
-                      {isPending ? "Submitting..." : "Request Free Quote"}
+                      Request Free Quote
                     </Button>
                   </form>
                 </Form>
@@ -230,7 +239,9 @@ export default function Quote() {
           </div>
 
           <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-            <h3 className="text-xl font-roboto font-bold mb-4">Why Request a Quote from Shree Enterprise?</h3>
+            <h3 className="text-xl font-roboto font-bold mb-4">
+              Why Request a Quote from Shree Enterprise?
+            </h3>
             <ul className="list-disc pl-5 space-y-2 text-gray-700">
               <li>Detailed assessment of your specific fire safety needs</li>
               <li>Transparent pricing with no hidden costs</li>

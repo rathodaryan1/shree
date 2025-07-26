@@ -102,9 +102,6 @@ export default function Footer() {
                     +91 {formatPhoneNumber(companyInfo.phone1)}
                   </a>
                   <br />
-                  <a href={`tel:+91${companyInfo.phone2}`} className="hover:text-primary">
-                    +91 {formatPhoneNumber(companyInfo.phone2)}
-                  </a>
                 </span>
               </li>
               <li className="flex">
