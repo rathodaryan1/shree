@@ -139,8 +139,7 @@ export default function Footer() {
               <MapPin className="text-primary shrink-0 mt-1 mr-3" />
               <span className="text-gray-400">
                 <a 
-                  href="https://www.google.com/maps/dir/23.075436,72.5311351/SHREE+ENTERPRISE,+behind+Esi+hospital,+Anand+Nagar,+Bhavnagar,+Gujarat+364005/@22.4238292,71.6407803,178422m/data=!3m1!1e3!4m9!4m8!1m1!4e1!1m5!1m1!1s0x395f5bb9cb081fa3:0x2d82a3556bbbfa31!2m2!1d72.1676804!2d21.7777809!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" 
-                  target="_blank" 
+                  href="https://www.google.com/maps/dir//behind+Esi+hospital,+Anand+Nagar,+Krishna+Nagar,+Bhavnagar,+Gujarat+364005/@21.7777605,72.0852788,22405m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x395f5bb9cb081fa3:0x2d82a3556bbbfa31!2m2!1d72.1676804!2d21.7777809!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D"
                   rel="noopener noreferrer" 
                   className="hover:text-primary"
                 >
