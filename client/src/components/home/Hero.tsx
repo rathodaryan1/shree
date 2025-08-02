@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 z-10"></div>
       <div className="absolute inset-0 z-0">
         <img 
-          src="/background.avif" 
+          src="/Background.png" 
           alt="Fire safety system" 
           className="w-full h-full object-cover"
         />
