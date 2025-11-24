@@ -16,7 +16,7 @@ export default function About() {
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-roboto font-bold mb-4">About Shree Enterprise</h1>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Leading provider of fire safety solutions in Anantapur, Bhavnagar and surrounding areas.
+            Leading provider of fire safety solutions in Bhavnagar and surrounding areas.
           </p>
         </div>
         
@@ -31,7 +31,7 @@ export default function About() {
           <div>
             <h2 className="text-2xl md:text-3xl font-roboto font-bold mb-6">Our Story</h2>
             <p className="text-gray-600 mb-4">
-              Shree Enterprise was founded with a mission to provide comprehensive fire safety solutions to businesses and residents in Anantapur, Bhavnagar and surrounding areas. We began as a small team of fire safety professionals and have since grown into a trusted provider of complete fire protection services.
+              Shree Enterprise was founded with a mission to provide comprehensive fire safety solutions to businesses and residents in Bhavnagar and surrounding areas. We began as a small team of fire safety professionals and have since grown into a trusted provider of complete fire protection services.
             </p>
             <p className="text-gray-600 mb-6">
               {companyInfo.about}
@@ -80,7 +80,7 @@ export default function About() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="font-roboto font-bold text-lg mb-2">10+ Years Experience</h3>
+              <h3 className="font-roboto font-bold text-lg mb-2">2+ Years Experience</h3>
               <p className="text-gray-600">Over a decade of expertise in fire safety solutions</p>
             </div>
             <div className="text-center">

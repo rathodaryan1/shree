@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 z-10"></div>
       <div className="absolute inset-0 z-0">
         <img 
-          src="/background.avif" 
+          src="/Background.png" 
           alt="Fire safety system" 
           className="w-full h-full object-cover"
         />
@@ -22,14 +22,15 @@ export default function Hero() {
             Expert installation, maintenance, and service of fire safety systems to protect what matters most.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="#services">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-red-700 text-white font-roboto font-medium w-full sm:w-auto px-6 py-6 text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
-              >
-                Explore Our Services
-              </Button>
-            </Link>
+            <a href="#services">
+           <Button 
+            size="lg" 
+          className="bg-primary hover:bg-red-700 text-white font-roboto font-medium w-full sm:w-auto px-6 py-6 text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
+           >
+         Explore Our Services
+          </Button>
+          </a>
+
             <Link href="/contact">
               <Button 
                 size="lg" 
